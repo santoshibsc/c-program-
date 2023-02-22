@@ -1,0 +1,34 @@
+#include<stdio.h>
+ int main()
+{
+    int thumbsup=90;
+    int chips=50;
+    int chocolate=150;
+    int biscuts=130;
+    int yippee=350;
+    int bill,tax,ab;
+    int thumbsupq,chipsq,chocolateq,biscutsq,yippeeq;
+    printf("enter no of thumbsup bottles:");
+    scanf("%d",&thumbsupq);
+    printf("enter no of chips packets:");
+    scanf("%d",&chipsq);
+    printf("enter no of chocolates:");
+    scanf("%d",&chocolateq);
+    printf("enter no of biscut packets:");
+    scanf("%d",&biscutsq);
+    printf("enter no of yippee packets:");
+    scanf("%d",&yippeeq);
+    bill=(thumbsupq*thumbsup)+(chipsq*chips)+(chocolateq*chocolate)+(biscutsq*biscuts)+(yippeeq*yippee);
+    if(bill>=1000)
+    tax=bill*10/100;
+    else if(bill>=700)
+    tax=bill*7/100;
+    else if (bill>=500)
+    tax=bill*5/100;
+    else if(bill>=200)
+    tax=bill*2/100;
+    else
+    tax=0;
+    ab=bill*tax;
+    printf("amount to be paid%d",ab);
+}

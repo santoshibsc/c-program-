@@ -1,0 +1,12 @@
+#include<stdio.h>
+void main() {
+int a;
+printf("Enter number:");
+scanf("%d",&a);
+if(a<50)
+printf ("Given number is lesser than 50");
+if(a>50)
+printf ("Given number is greater than 50 ");
+if(a==50)
+printf("Given number is equal to 50");
+}

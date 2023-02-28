@@ -1,0 +1,62 @@
+#include<stdio.h>
+#include<math.h>
+
+int isPrime(int num)
+{
+    int inum = sqrt(num), prime = 1, count;
+
+    for(count = 2; count <= inum; count++)
+    {
+         if(num % count == 0)
+         {
+            prime = 0;
+            break;
+         }
+    }
+
+    return(prime);
+}
+
+int main()
+{
+    int start, end, temp, num, slno = 0, on_off;
+
+    printf("Enter start and end value\n");
+    scanf("%d%d", &start, &end);
+
+    printf("Do you want to print prime numbers? (yes = 1, no = 0)\n");
+    scanf("%d", &on_off);
+
+    if(start > end)
+    {
+        temp  = start;
+        start = end;
+        end   = temp;
+    }
+
+    if(on_off)
+        printf("\nPrime numbers between %d and %d are:\n\n", start, end);
+
+    for(num = start; num <= end; num++)
+    {
+        if(num == 1)
+        {
+            continue;
+        }
+
+        if( isPrime(num) )
+        {
+            slno++;
+
+            if(on_off)
+            {
+                printf("%d. %d is prime number.\n", slno, num);
+            }
+         }
+    }
+
+    printf("\nThere are %d prime numbers between %d and %d.\n", 
+             slno, start, end);
+
+    return 0;
+}
